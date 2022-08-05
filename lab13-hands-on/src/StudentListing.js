@@ -9,8 +9,8 @@ export default function StudentListing(){
                 <ul>
                     {
                     studentContext.getStudents().map(student=>{return(
-                        <div key={student.student_no}>
-                            <li>Student Number: {student.student_no}</li>
+                        <div key={student.id}>
+                            <li>Student Number: {student.id}</li>
                             <li>Year of Study: {student.year_of_study}</li>
                             <li>Gender: {student.gender}</li>
                             <li>Graduated: {student.graduated==="true"?"Yes":"No"}</li>

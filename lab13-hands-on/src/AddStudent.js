@@ -3,7 +3,7 @@ import StudentContext from './StudentContext';
 
 export default class AddStudent extends React.Component{
     state={
-        student_no:"",
+        id:"",
         year_of_study:"",
         gender:"Female",
         graduated:"Yes"
@@ -14,8 +14,17 @@ export default class AddStudent extends React.Component{
             [e.target.name]:e.target.value
         })
     }
-    addStudent = () =>{
-        this.context.addStudent(this.state.student_no,this.state.year_of_study,this.state.gender,this.state.graduated)
+    addStudent = () => {
+        // this.context.addStudent(this.state.id,this.state.year_of_study,this.state.gender,this.state.graduated)
+        
+        // alternatively, can pass parameters as object because there is too many parameters to pass
+        let newStudent = {
+            id:this.state.id,
+            year_of_study:this.state.year_of_study,
+            gender:this.state.gender,
+            graduated:this.state.graduated
+        }
+        this.context.addStudent(newStudent)
     }
     render(){
         return(
@@ -23,8 +32,8 @@ export default class AddStudent extends React.Component{
                 <div>
                     <label>Student Number:</label>
                     <input type="text" 
-                        name="student_no" 
-                        value={this.state.student_no} 
+                        name="id" 
+                        value={this.state.id} 
                         onChange={this.updateFormField}/>
                 </div>
                 <div>
