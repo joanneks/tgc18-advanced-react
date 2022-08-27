@@ -7,6 +7,7 @@ import ProductDetails from './ProductDetails';
 function App() {
   return (
     <Fragment>
+      
       <ProductProvider>
         <Router>
           <Routes>
